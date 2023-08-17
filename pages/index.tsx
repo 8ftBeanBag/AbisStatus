@@ -64,7 +64,7 @@ export default function Home() {
     <main className="text-white flex min-h-screen flex-col items-center justify-between p-24 bg-[linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(160,15,215,1) 35%, rgba(0,212,255,1) 100%)]">
       <div className='px-8 text-white text-center font-dancing flex justify-between w-screen items-center'>
         <div className='flex'><Icon path={mdiCalendar} size={1} color="white"></Icon>8 AM - 6 PM EST</div>
-        <span className='text-5xl '>Abi&apos;s Status</span>
+        <span className='text-5xl '>Abi&apos;s Status test</span>
         <div className='flex items-center'>Storms:&nbsp; {weather === "Error" ? <span>?</span> : <div style={{background: weather ? "red" : "lightgreen", width: "16px", height: "16px", borderRadius: "99999px"}}></div>}</div>
       </div>
       <div className='bg-white rounded-full w-8 h-8 flex justify-center items-center'>
