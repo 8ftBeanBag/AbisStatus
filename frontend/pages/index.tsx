@@ -1,14 +1,12 @@
 "use client"
 
-import key from "./weatherKey"
+import key from "../secrets/weatherKey"
 import axios from "axios"
 import queryString from 'query-string'
 import Icon from '@mdi/react'
 import {mdiCalendar, mdiWifi} from "@mdi/js"
 import {useState, useEffect} from "react"
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Image from "next/image"
  
 export const metadata: Metadata = {
   title: "Abi's Status",
@@ -92,12 +90,12 @@ function Status(props:StatusProps){
   if((+startTime - +props.time < 0) && (+endTime - +props.time > 0)){
     return (
       <p className="flex flex-col items-center">     
-        <Image className='rounded-full' alt="Abi headshot" width="200" height="200" src="/cropped_headshot.png"/>
+        <img className='rounded-full' alt="Abi headshot" width="200" height="200" src="/cropped_headshot.png"/>
         {props.weather==="Error" ? "No data on storms so who knows!" : props.weather ?
           <div className='text-center flex flex-col items-center'>
             <p className='font-inter'>Storms are probably cutting out Abi&apos;s internet.</p>
             <span className='text-xs text-secondary'>Florida <em>hates</em> Abi&apos;s Internet.</span>
-            <Image alt="Thunderstorm" width="200" height="200" src="/ts.png"/>
+            <img alt="Thunderstorm" width="200" height="200" src="/ts.png"/>
           </div>
         :
         " Abi should be available 🤔"}
@@ -108,7 +106,7 @@ function Status(props:StatusProps){
     return (
       <div className='text-center flex flex-col items-center'>
         <p>Abi hasn&apos;t had her coffee yet. <br/> You probably don&apos;t want to contact her.</p>
-        <Image alt="Coffee" width="200" height="200" src="/coffee.png"/>
+        <img alt="Coffee" width="200" height="200" src="/coffee.png"/>
       </div>
     )
   }
@@ -116,7 +114,7 @@ function Status(props:StatusProps){
     return (
       <div className='text-center flex flex-col items-center'>
         <p>Abi is fighting crime in Gotham with her evening. <br/> You can only reach her through the batmobile&apos;s number.</p>
-        <Image alt="Bat speech bubble" width="200" height="200" src="/bat.png"/>
+        <img alt="Bat speech bubble" width="200" height="200" src="/bat.png"/>
       </div>
     )
   }
