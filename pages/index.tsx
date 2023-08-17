@@ -54,7 +54,7 @@ export default function Home() {
     const interval = setInterval(() => {
       setLoading(true);
       loadData();
-    }, 200000);
+    }, 210000);
     return () => {
       clearInterval(interval);
     };
