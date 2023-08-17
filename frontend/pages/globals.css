@@ -24,11 +24,6 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(2,0,36);
+  background: linear-gradient(56deg, rgba(2,0,36,1) 0%, rgba(160,15,215,1) 35%, rgba(48,137,220,1) 62%, rgba(51,24,225,1) 100%); 
 }
