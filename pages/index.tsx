@@ -34,7 +34,8 @@ export default function Home() {
     const getTimelineParameters =  queryString.stringify({apikey, location, fields, units, timezone}, {arrayFormat: "comma"});
     axios.get(getTimelineURL + "?" + getTimelineParameters)
     .then((response) => {
-      setWeather(response.data.data.weatherCode)
+      setWeather(response.data.data.values.weatherCode)
+      console.log(weather)
     })
     .catch(() => {
       setWeather("Error");
@@ -89,7 +90,7 @@ function Status(props:StatusProps){
 
   if((+startTime - +props.time < 0) && (+endTime - +props.time > 0)){
     return (
-      <p className="flex flex-col items-center">     
+      <div className="flex flex-col items-center">     
         <img className='rounded-full' alt="Abi headshot" width="200" height="200" src="/cropped_headshot.png"/>
         {props.weather==="Error" ? "No data on storms so who knows!" : props.weather ?
           <div className='text-center flex flex-col items-center'>
@@ -99,7 +100,7 @@ function Status(props:StatusProps){
           </div>
         :
         " Abi should be available 🤔"}
-      </p>
+      </div>
     )
   }
   else if(+startTime - +props.time > 0){
