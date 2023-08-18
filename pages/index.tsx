@@ -34,8 +34,7 @@ export default function Home() {
     const getTimelineParameters =  queryString.stringify({apikey, location, fields, units, timezone}, {arrayFormat: "comma"});
     axios.get(getTimelineURL + "?" + getTimelineParameters)
     .then((response) => {
-      setWeather(response.data.data.values.weatherCode)
-      console.log(weather)
+      setWeather(response.data.data.values.weatherCode===8000)
     })
     .catch(() => {
       setWeather("Error");
